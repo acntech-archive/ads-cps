@@ -1,6 +1,8 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 $aside-width: 290px;
+$wide-width: 1200px;
+$big-screen-width: 1900px;
 
 $gray: #aaaaaa;
 $light-gray: #eeeeee;
@@ -74,38 +76,8 @@ header h3,
     margin-top: 28px;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
-
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
-}
-/* Full HD TV */
-@media screen and (min-width: 1900px) {
-  .container {
-    max-width: inherit;
-    width: 100%;
-  }
-}
-
 .ruter {
-  width: 1500px;
+  width: 330px;
   header {
     float: left;
     display: inline-block;
@@ -159,7 +131,8 @@ aside.right {
   $width: 290px;
   max-width: $width;
   header h1 {
-    margin-left: 165px;
+    margin-left: 145px;
+    margin-top: 0;
   }
   ul {
     list-style: none;
@@ -184,6 +157,85 @@ aside.right {
       .media img {
         max-width: $width - 50px;
       }
+    }
+  }
+}
+
+.images {
+  float: left;
+  ul {
+    list-style: none;
+  }
+  img {
+    max-width: 330px;
+  }
+  .item {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+.error {
+  @extend .alert;
+  @extend .alert-danger;
+  clear: left;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+/* Kind of big */
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: $wide-width) {
+    .container {
+        // max-width: $wide-width - 38px;
+        max-width: inherit;
+        width: 100%;
+    }
+    .ruter {
+      width: $wide-width - 400px;
+    }
+    .images {
+      img {
+        max-width: $wide-width - 400px;
+      }
+    }
+}
+
+/* Full HD TV */
+@media screen and (min-width: $big-screen-width) {
+  .container {
+    max-width: inherit;
+    width: 100%;
+  }
+  .ruter {
+    max-width: 1500px;
+  }
+  .images {
+    img {
+      max-width: 1500px;
     }
   }
 }

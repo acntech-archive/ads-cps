@@ -1,0 +1,26 @@
+<div class="images" ng-controller="ImageController">
+  <div class="error" ng-show="errorMessage">
+    {{errorMessage}}
+  </div>
+  <div class="item" ng-repeat="image in images.files">
+    <img ng-src="{{image.url}}" />
+  </div>
+</div>
+
+<script type="text/javascript">
+var switchImage = function () {
+  var items = $('.images').find('.item');
+  var first = items.first();
+  var active = items.filter('.active');
+
+  if (!active.length) {
+    first.addClass('active');
+  } else {
+    var next = active.next().length ? active.next() : first;
+    next.siblings().removeClass('active');
+    next.addClass('active');
+  }
+};
+setInterval(switchImage, 10000);
+setTimeout(switchImage, 1000);
+</script>

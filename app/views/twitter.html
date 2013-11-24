@@ -1,7 +1,10 @@
 <div class="twitter" ng-controller="TwitterController">
   <header>
-    <h1>Twitter</h1>
+    <h1>#Twitter</h1>
   </header>
+  <div class="error" ng-show="errorMessage">
+    {{errorMessage}}
+  </div>
   <ul>
     <li class="tweet" ng-repeat="tweet in tweets">
       <header>

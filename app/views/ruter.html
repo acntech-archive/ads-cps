@@ -2,6 +2,9 @@
   <header>
     <h1>#Ruter</h1>
   </header>
+  <div class="error" ng-show="errorMessage">
+    {{errorMessage}}
+  </div>
   <ul>
     <li ng-repeat="departure in departures">
       <span class="line">{{departure.line}} {{departure.destination}}</span>
