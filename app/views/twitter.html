@@ -1,0 +1,20 @@
+<div class="twitter" ng-controller="TwitterController">
+  <header>
+    <h1>Twitter</h1>
+  </header>
+  <ul>
+    <li class="tweet" ng-repeat="tweet in tweets">
+      <header>
+        <h3 class="user">
+          <img class="profileimage" ng-src="{{tweet.user.profileImageUrl}}" />
+          <span class="name">{{tweet.user.name}}</span>
+        </h3>
+        <span class="screenname">@{{tweet.user.screenName}}</span>
+      </header>
+      <span class="text">{{tweet.text}}</span>
+      <span class="media" ng-repeat="m in tweet.media">
+        <img ng-src="{{m.mediaUrl}}" />
+      </span>
+    </li>
+  </ul>
+</div>
