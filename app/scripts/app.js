@@ -12,6 +12,10 @@ angular.module('adsCpsApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/ruter', {
+        templateUrl: 'views/ruter.html',
+        controller: 'RuterController'
+      })
       .otherwise({
         redirectTo: '/'
       });
