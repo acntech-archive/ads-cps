@@ -1,6 +1,12 @@
-<h1>Ruter</h1>
-<ul>
-  <li ng-repeat="departure in departures">
-    {{departure.line}} {{departure.destination}} {{departure.timeLeft}} ({{departure.departure}})
-  </li>
-</ul>
+<div class="ruter" ng-controller="RuterController">
+  <header>
+    <h1>#Ruter</h1>
+  </header>
+  <ul>
+    <li ng-repeat="departure in departures">
+      <span class="line">{{departure.line}} {{departure.destination}}</span>
+      <span class="timeleft">{{departure.timeLeft}} min</span>
+      <span class="departuretime">{{departure.departure | date:'shortTime'}}</span>
+    </li>
+  </ul>
+</div>

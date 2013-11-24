@@ -24,11 +24,13 @@ body {
 }
 
 /* Custom page header */
+header,
 .header {
     border-bottom: 1px solid #e5e5e5;
 }
 
 /* Make the masthead heading the same height as the navigation */
+header h3,
 .header h3 {
     margin-top: 0;
     margin-bottom: 0;
@@ -88,4 +90,23 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+.ruter {
+  header {
+    float: right;
+    display: inline-block;
+  }
+  ul {
+    list-style: none;
+  }
+  .line {
+    min-width: 110px;
+    display: inline-block;
+  }
+  .timeleft {
+    font-weight: bold;
+    min-width: 45px;
+    display: inline-block;
+  }
 }
